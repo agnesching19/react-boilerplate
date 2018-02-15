@@ -27,18 +27,12 @@ database.ref().set({
   console.log('This failed', error);
 });
 
-// database.ref().set('This is my data.');
+// database.ref('isGirl').set(null);
 
-// database.ref('age').set(25);
-// database.ref('location/city').set('Taipei');
-
-database.ref('attributes').set({
-  height: 170,
-  weight: 55
-}).then(() => {
-  console.log('Second set call worked.');
-}).catch((error) => {
-  console.log('Things didn\'t work for the second set call.', error);
-});
-
-// console.log('I made a request to change the data.');
+// database.ref()
+//   .remove()
+//   .then(() => {
+//     console.log('Removed data.');
+//   }).catch((error) => {
+//     console.log('Remove failed:' + error);
+//   });
