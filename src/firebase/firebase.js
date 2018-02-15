@@ -21,16 +21,24 @@ database.ref().set({
     city: 'London',
     country: 'United Kingdom'
   }
+}).then(() => {
+  console.log('Data is saved');
+}).catch((error) => {
+  console.log('This failed', error);
 });
 
 // database.ref().set('This is my data.');
 
-database.ref('age').set(25);
-database.ref('location/city').set('Taipei');
+// database.ref('age').set(25);
+// database.ref('location/city').set('Taipei');
 
 database.ref('attributes').set({
   height: 170,
   weight: 55
+}).then(() => {
+  console.log('Second set call worked.');
+}).catch((error) => {
+  console.log('Things didn\'t work for the second set call.', error);
 });
 
-console.log('I made a firebase DB work!');
+// console.log('I made a request to change the data.');
