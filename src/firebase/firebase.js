@@ -11,6 +11,24 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.database().ref().set({
-  name: 'Agnes Ching'
+const database = firebase.database();
+
+database.ref().set({
+  name: 'Agnes Ching',
+  age: 20,
+  isGirl: true,
+  location: {
+    city: 'London',
+    country: 'United Kingdom'
+  }
+});
+
+// database.ref().set('This is my data.');
+
+database.ref('age').set(25);
+database.ref('location/city').set('Taipei');
+
+database.ref('attributes').set({
+  height: 170,
+  weight: 55
 });
