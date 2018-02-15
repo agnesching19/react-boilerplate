@@ -32,3 +32,5 @@ database.ref('attributes').set({
   height: 170,
   weight: 55
 });
+
+console.log('I made a firebase DB work!');
