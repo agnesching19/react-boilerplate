@@ -13,6 +13,18 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref('expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+database.ref('expenses').on('child_changed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+database.ref('expenses').on('child_added', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
 database.ref('expenses').push({
   description: 'Beer',
   note: '',
@@ -20,19 +32,30 @@ database.ref('expenses').push({
   createdAt: 964138744
 });
 
-database.ref('expenses').push({
-  description: 'Rent',
-  note: '',
-  amount: 50000,
-  createdAt: 526994744
-});
+// database.ref('expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+//     console.log(expenses);
+//   });
 
-database.ref('expenses').push({
-  description: 'Dinner',
-  note: '',
-  amount: 1600,
-  createdAt: 673413874
-});
+
+// database.ref('expenses').on('value', (snapshot) => {
+//   const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+//     console.log(expenses);
+// });
 
 // database.ref('notes/-L5PkQ6kUlqCFuleqwc0').remove();
 
