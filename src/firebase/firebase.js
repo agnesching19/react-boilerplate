@@ -13,12 +13,65 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-const onValueChange = database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-}, (error) => {
-  console.log('Error with data fetching', error);
+database.ref('expenses').push({
+  description: 'Beer',
+  note: '',
+  amount: 350,
+  createdAt: 964138744
 });
+
+database.ref('expenses').push({
+  description: 'Rent',
+  note: '',
+  amount: 50000,
+  createdAt: 526994744
+});
+
+database.ref('expenses').push({
+  description: 'Dinner',
+  note: '',
+  amount: 1600,
+  createdAt: 673413874
+});
+
+// database.ref('notes/-L5PkQ6kUlqCFuleqwc0').remove();
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// const firebaseNotes = {
+//   notes: {
+//     ahiu2wt: {
+//       title: 'First note',
+//       body: 'This is the note: 12'
+//     },
+//     ikujpo2: {
+//       title: 'Second note',
+//       body: 'This is the note: 55'
+//     }
+//   },
+// };
+
+// const notes = [{
+//   id: '12',
+//   title: 'First note',
+//   body: 'This is the note: 12'
+// }, {
+//   id: '55',
+//   title: 'Second note',
+//   body: 'This is the note: 55'
+// }];
+
+// database.ref('notes').set(notes);
+
+// const onValueChange = database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// }, (error) => {
+//   console.log('Error with data fetching', error);
+// });
 
 // const onValueChange = database.ref().on('value', (snapshot) => {
 //   console.log(snapshot.val());
