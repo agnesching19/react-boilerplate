@@ -13,13 +13,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(LoginPage);
-
-// export class LoginPage extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <button>Login</button>
-//       </div>
-//     );
-//   }
-// };
