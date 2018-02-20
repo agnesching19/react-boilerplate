@@ -27,3 +27,8 @@
   color: white;
   padding: $s-size;
 }
+
+.remove-button {
+  @extend .create-button;
+  background: $remove-gray;
+}
